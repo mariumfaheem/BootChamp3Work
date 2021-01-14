@@ -1,0 +1,56 @@
+{
+  "version": 4,
+  "terraform_version": "0.14.3",
+  "serial": 162,
+  "lineage": "049d562d-da5d-e00f-a026-0e5f0aef0b5e",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "etl-script-for-merge-databases",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": "public-read",
+            "arn": "arn:aws:s3:::prod-etl-script-for-merge-databases",
+            "bucket": "prod-etl-script-for-merge-databases",
+            "bucket_domain_name": "prod-etl-script-for-merge-databases.s3.amazonaws.com",
+            "bucket_prefix": null,
+            "bucket_regional_domain_name": "prod-etl-script-for-merge-databases.s3.us-east-2.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [],
+            "hosted_zone_id": "Z2O1EMRO9K5GLX",
+            "id": "prod-etl-script-for-merge-databases",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "policy": null,
+            "region": "us-east-2",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [],
+            "tags": {
+              "Environment": "Dev",
+              "Name": "prod-etl-script-for-merge-databases"
+            },
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    }
+  ]
+}

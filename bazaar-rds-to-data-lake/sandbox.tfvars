@@ -1,0 +1,10 @@
+region = "us-east-2"
+account = 774337928902
+secret_id = "testing/gluedatabase-phbG7b"
+data_lake_bucket = "alldatabasesdestination"
+environment = "sandbox"
+rds_sg = "sg-53fe8a2d"
+vpc_id = "vpc-598a3b32"
+subnets = ["default-vpc-598a3b32"]
+access_key = ""
+secret_key = ""

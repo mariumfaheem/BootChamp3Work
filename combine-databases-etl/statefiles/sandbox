@@ -1,0 +1,595 @@
+{
+  "version": 4,
+  "terraform_version": "0.14.3",
+  "serial": 173,
+  "lineage": "049d562d-da5d-e00f-a026-0e5f0aef0b5e",
+  "outputs": {},
+  "resources": [
+    {
+      "mode": "data",
+      "type": "aws_secretsmanager_secret",
+      "name": "secrets",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:secretsmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH",
+            "description": "",
+            "id": "arn:aws:secretsmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH",
+            "kms_key_id": "",
+            "name": "testing/databasedst",
+            "policy": "",
+            "rotation_enabled": false,
+            "rotation_lambda_arn": "",
+            "rotation_rules": [],
+            "tags": {}
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "data",
+      "type": "aws_secretsmanager_secret_version",
+      "name": "current",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:secretsmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH",
+            "id": "arn:aws:secretsmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH|AWSCURRENT",
+            "secret_binary": "",
+            "secret_id": "arn:aws:secretsmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH",
+            "secret_string": "{\"rds_host\":\"database.c7i6z2eoo1cg.us-east-2.rds.amazonaws.com\",\"port\":\"3306\",\"username\":\"admin\",\"password\":\"pakistan1234!\",\"rds_databasename\":\"bazaar\"}",
+            "version_id": "20097d59-a854-4afd-8db0-b2c3716039f0",
+            "version_stage": "AWSCURRENT",
+            "version_stages": [
+              "AWSCURRENT"
+            ]
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_catalog_database",
+      "name": "Merge_catalog_database",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:glue:us-east-2:774337928902:database/s1",
+            "catalog_id": "774337928902",
+            "description": "",
+            "id": "774337928902:s1",
+            "location_uri": "",
+            "name": "s1",
+            "parameters": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_crawler",
+      "name": "glue-crawler",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:glue:us-east-2:774337928902:crawler/g1",
+            "catalog_target": [],
+            "classifiers": null,
+            "configuration": "{\"Version\":1.0,\"CrawlerOutput\":{\"Tables\":{\"AddOrUpdateBehavior\":\"MergeNewColumns\"}}}",
+            "database_name": "s1",
+            "description": "",
+            "dynamodb_target": [],
+            "id": "g1",
+            "jdbc_target": [],
+            "lineage_configuration": [
+              {
+                "crawler_lineage_settings": "DISABLE"
+              }
+            ],
+            "mongodb_target": [],
+            "name": "g1",
+            "recrawl_policy": [
+              {
+                "recrawl_behavior": "CRAWL_EVERYTHING"
+              }
+            ],
+            "role": "crawler/sandbox_ETL_role",
+            "s3_target": [
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_agent/visit_log"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/category"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/category_hierarchy"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/category_product"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/product"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/product_variant"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_catalog/product_variant_inventory"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_customer/store"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_customer/store_address"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_customer/store_user"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_identity/client"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_identity/role"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_identity/user"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_identity/user_session"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_attachment"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_attribute"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_customer"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_event"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_item"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_item_shipment"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_item_warehouse"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_payment"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_pricing_breakdown"
+              },
+              {
+                "connection_name": "",
+                "exclusions": null,
+                "path": "s3://alldatabasesdestination/bazaar_order/order_webhook_request"
+              }
+            ],
+            "schedule": "",
+            "schema_change_policy": [
+              {
+                "delete_behavior": "DEPRECATE_IN_DATABASE",
+                "update_behavior": "UPDATE_IN_DATABASE"
+              }
+            ],
+            "security_configuration": "",
+            "table_prefix": "",
+            "tags": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_glue_catalog_database.Merge_catalog_database",
+            "aws_iam_role.ETL_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_job",
+      "name": "dhw-ETL-script",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:glue:us-east-2:774337928902:job/CombineScript",
+            "command": [
+              {
+                "name": "glueetl",
+                "python_version": "3",
+                "script_location": "s3://prod-etl-script-for-merge-databases/profile"
+              }
+            ],
+            "connections": null,
+            "default_arguments": {
+              "--enable-continuous-cloudwatch-log": "true",
+              "--enable-continuous-log-filter": "true",
+              "--enable-metrics": "true"
+            },
+            "description": "",
+            "execution_property": [
+              {
+                "max_concurrent_runs": 1
+              }
+            ],
+            "glue_version": "2.0",
+            "id": "CombineScript",
+            "max_capacity": 10,
+            "max_retries": 0,
+            "name": "CombineScript",
+            "non_overridable_arguments": null,
+            "notification_property": [],
+            "number_of_workers": 10,
+            "role_arn": "arn:aws:iam::774337928902:role/crawler/sandbox_ETL_role",
+            "security_configuration": "",
+            "tags": null,
+            "timeout": 2880,
+            "worker_type": "G.1X"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ETL_role",
+            "aws_s3_bucket.etl-script-for-merge-databases",
+            "aws_s3_bucket_object.s3_script_location"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_trigger",
+      "name": "trigger-to-Job",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "actions": [
+              {
+                "arguments": null,
+                "crawler_name": "",
+                "job_name": "CombineScript",
+                "notification_property": [],
+                "security_configuration": "",
+                "timeout": 0
+              }
+            ],
+            "arn": "arn:aws:glue:us-east-2:774337928902:trigger/triggerjob",
+            "description": "",
+            "enabled": true,
+            "id": "triggerjob",
+            "name": "triggerjob",
+            "predicate": [
+              {
+                "conditions": [
+                  {
+                    "crawl_state": "SUCCEEDED",
+                    "crawler_name": "g1",
+                    "job_name": "",
+                    "logical_operator": "EQUALS",
+                    "state": ""
+                  }
+                ],
+                "logical": "AND"
+              }
+            ],
+            "schedule": "",
+            "tags": null,
+            "timeouts": null,
+            "type": "CONDITIONAL",
+            "workflow_name": "f1"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_glue_catalog_database.Merge_catalog_database",
+            "aws_glue_crawler.glue-crawler",
+            "aws_glue_job.dhw-ETL-script",
+            "aws_glue_workflow.dhw-workflow",
+            "aws_iam_role.ETL_role",
+            "aws_s3_bucket.etl-script-for-merge-databases",
+            "aws_s3_bucket_object.s3_script_location"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_trigger",
+      "name": "trigger-to-crawler",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "actions": [
+              {
+                "arguments": null,
+                "crawler_name": "g1",
+                "job_name": "",
+                "notification_property": [],
+                "security_configuration": "",
+                "timeout": 0
+              }
+            ],
+            "arn": "arn:aws:glue:us-east-2:774337928902:trigger/triggercrawler",
+            "description": "",
+            "enabled": true,
+            "id": "triggercrawler",
+            "name": "triggercrawler",
+            "predicate": [],
+            "schedule": "cron(12 02 * * ? *)",
+            "tags": null,
+            "timeouts": null,
+            "type": "SCHEDULED",
+            "workflow_name": "f1"
+          },
+          "sensitive_attributes": [],
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwfX0=",
+          "dependencies": [
+            "aws_glue_workflow.dhw-workflow"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_glue_workflow",
+      "name": "dhw-workflow",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:glue:us-east-2:774337928902:workflow/f1",
+            "default_run_properties": null,
+            "description": "",
+            "id": "f1",
+            "max_concurrent_runs": 0,
+            "name": "f1",
+            "tags": null
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_instance_profile",
+      "name": "ETL_profile",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::774337928902:instance-profile/sandbox_ETL_profile",
+            "create_date": "2021-01-13T10:49:53Z",
+            "id": "sandbox_ETL_profile",
+            "name": "sandbox_ETL_profile",
+            "name_prefix": null,
+            "path": "/",
+            "role": "sandbox_ETL_role",
+            "unique_id": "AIPA3ISRDD3DJLAZHCASO"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ETL_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role",
+      "name": "ETL_role",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::774337928902:role/crawler/sandbox_ETL_role",
+            "assume_role_policy": "{\"Version\":\"2012-10-17\",\"Statement\":[{\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"glue.amazonaws.com\"},\"Action\":\"sts:AssumeRole\"}]}",
+            "create_date": "2021-01-13T10:49:51Z",
+            "description": "",
+            "force_detach_policies": false,
+            "id": "sandbox_ETL_role",
+            "max_session_duration": 3600,
+            "name": "sandbox_ETL_role",
+            "name_prefix": null,
+            "path": "/crawler/",
+            "permissions_boundary": null,
+            "tags": null,
+            "unique_id": "AROA3ISRDD3DCC4NZALP5"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_iam_role_policy",
+      "name": "ETL_policy",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "id": "sandbox_ETL_role:sandbox_ETLs_policy",
+            "name": "sandbox_ETLs_policy",
+            "name_prefix": null,
+            "policy": "{\r\n    \"Version\": \"2012-10-17\",\r\n    \"Statement\": [\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\":\"*\",\r\n            \"Resource\": \"arn:aws:secretmanager:us-east-2:774337928902:secret:testing/databasedst-9PmGQH\"\r\n        },\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"glue:*\",\r\n                \"secretsmanager:GetSecretValue\",\r\n                \"s3:GetBucketLocation\",\r\n                \"s3:ListBucket\",\r\n                \"s3:ListAllMyBuckets\",\r\n                \"s3:GetBucketAcl\",\r\n                \"ec2:DescribeVpcEndpoints\",\r\n                \"ec2:DescribeRouteTables\",\r\n                \"ec2:CreateNetworkInterface\",\r\n                \"ec2:DeleteNetworkInterface\",\r\n                \"ec2:DescribeNetworkInterfaces\",\r\n                \"ec2:DescribeSecurityGroups\",\r\n                \"ec2:DescribeSubnets\",\r\n                \"ec2:DescribeVpcAttribute\",\r\n                \"iam:ListRolePolicies\",\r\n                \"iam:GetRole\",\r\n                \"iam:GetRolePolicy\",\r\n                \"cloudwatch:PutMetricData\"\r\n            ],\r\n            \"Resource\": [\r\n                \"*\"\r\n            ]\r\n        },\r\n            {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"s3:CreateBucket\"\r\n            ],\r\n            \"Resource\": [\r\n                \"arn:aws:s3:::prod-etl-script-for-merge-databases\"\r\n            ]\r\n        },\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"s3:GetObject\",\r\n                \"s3:PutObject\",\r\n                \"s3:DeleteObject\"\r\n            ],\r\n            \"Resource\": [\r\n                \"arn:aws:s3:::prod-etl-script-for-merge-databases*/*\",\r\n                \"arn:aws:s3:::*/*prod-etl-script-for-merge-databases*/*\"\r\n            ]\r\n        },\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"s3:GetObject\"\r\n            ],\r\n            \"Resource\": [\r\n                \"arn:aws:s3:::crawler-public*\",\r\n                \"arn:aws:s3:::prod-etl-script-for-merge-databases*\"\r\n            ]\r\n        },\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"logs:CreateLogGroup\",\r\n                \"logs:CreateLogStream\",\r\n                \"logs:PutLogEvents\"\r\n            ],\r\n            \"Resource\": [\r\n                \"arn:aws:logs:*:*:prod-etl-script-for-merge-databases/*\",\r\n                 \"arn:aws:logs:*:*:prod-etl-script-for-merge-databases/*\"\r\n\r\n            ]\r\n        },\r\n        {\r\n            \"Effect\": \"Allow\",\r\n            \"Action\": [\r\n                \"ec2:CreateTags\",\r\n                \"ec2:DeleteTags\"\r\n            ],\r\n            \"Condition\": {\r\n                \"ForAllValues:StringEquals\": {\r\n                    \"aws:TagKeys\": [\r\n                        \"aws-glue-service-resource\"\r\n                    ]\r\n                }\r\n            },\r\n            \"Resource\": [\r\n                \"arn:aws:ec2:*:*:network-interface/*\",\r\n                \"arn:aws:ec2:*:*:security-group/*\",\r\n                \"arn:aws:ec2:*:*:instance/*\"\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+            "role": "sandbox_ETL_role"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_iam_role.ETL_role"
+          ]
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "etl-script-for-merge-databases",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": "public-read",
+            "arn": "arn:aws:s3:::prod-etl-script-for-merge-databases",
+            "bucket": "prod-etl-script-for-merge-databases",
+            "bucket_domain_name": "prod-etl-script-for-merge-databases.s3.amazonaws.com",
+            "bucket_prefix": null,
+            "bucket_regional_domain_name": "prod-etl-script-for-merge-databases.s3.us-east-2.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": false,
+            "grant": [],
+            "hosted_zone_id": "Z2O1EMRO9K5GLX",
+            "id": "prod-etl-script-for-merge-databases",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "policy": null,
+            "region": "us-east-2",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [],
+            "tags": {
+              "Environment": "Dev",
+              "Name": "prod-etl-script-for-merge-databases"
+            },
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": []
+        }
+      ]
+    },
+    {
+      "mode": "managed",
+      "type": "aws_s3_bucket_object",
+      "name": "s3_script_location",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acl": "private",
+            "bucket": "prod-etl-script-for-merge-databases",
+            "cache_control": "",
+            "content": null,
+            "content_base64": null,
+            "content_disposition": "",
+            "content_encoding": "",
+            "content_language": "",
+            "content_type": ".py",
+            "etag": "060a0af728fc722b9d33c979ddb8d622",
+            "force_destroy": false,
+            "id": "profile",
+            "key": "profile",
+            "kms_key_id": null,
+            "metadata": null,
+            "object_lock_legal_hold_status": "",
+            "object_lock_mode": "",
+            "object_lock_retain_until_date": "",
+            "server_side_encryption": "",
+            "source": "combine-rds-script.py",
+            "storage_class": "STANDARD",
+            "tags": null,
+            "version_id": "",
+            "website_redirect": ""
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "aws_s3_bucket.etl-script-for-merge-databases"
+          ]
+        }
+      ]
+    }
+  ]
+}
